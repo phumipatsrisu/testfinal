@@ -1,3 +1,10 @@
+<?php
+    require("connect.php");
+    $sql = "SELECT * FROM data_student";
+    $result = mysqli_query($con, $sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,12 +30,13 @@
                 </tr>
             </thead>
             <tbody>
+                <?php while($row = mysqli_fetch_assoc($result))?>
                 <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td><?php echo["0"] ?></td>
+                    <td><?php echo["1"] ?></td>
+                    <td><?php echo["2"] ?></td>
+                    <td><?php echo["3"] ?></td>
+                    <td><?php echo["4"] ?></td>
                     <td><a class="btn btn-primary" href="">แก้ไข</a></td>
                     <td><a class="btn btn-danger" href="">ลบ</a></td>
                 </tr>
