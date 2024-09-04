@@ -10,9 +10,9 @@
     <div class="container">
         <h1 class="text-center">ลงทะเบียน</h1>
         <hr>
-        <form action="data.php" >
+        <form action="data.php" method="POST">
             <label for="stu_id">รหัสนักเรียน :</label>
-            <input class="form-control" type="text" name="stu_id" id="" required>
+            <input class="form-control" type="number" name="stu_id" id="" required>
 
             <label for="stu_id">ชื่อ-นามสกุล:</label>
             <input class="form-control" type="text" name="stu_name" id=""  required>
@@ -21,7 +21,7 @@
             <input class="form-control" type="email" name="stu_email" id=""  required>
 
             <label for="stu_id">หมายเลขโทรศัพท์ :</label>
-            <input class="form-control" type="int" name="stu_tel" id=""  required>
+            <input class="form-control" type="number" name="stu_tel" id=""  required>
 
             <label for="stu_id">วันที่ลงทะเบียน :</label>
             <input class="form-control" type="date" name="stu_date" id=""  required> <br>
