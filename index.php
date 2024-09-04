@@ -41,7 +41,7 @@
                         <td><?php echo "$row[stu_email]"?></td>
                         <td><?php echo "$row[stu_tel]" ?></td>
                         <td><?php echo "$row[stu_date]" ?></td>
-                        <td><a class="btn btn-primary" href="">แก้ไข</a></td>
+                        <td><a class="btn btn-primary" href="fixform.php">แก้ไข</a></td>
                         <td><a class="btn btn-danger" href="">ลบ</a></td>
                     </tr>
                     <?php } ?>
