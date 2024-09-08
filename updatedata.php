@@ -16,12 +16,12 @@ $sql = "UPDATE data_student SET
     stu_tel='$stu_tel',
     stu_date='$stu_date'
    WHERE id=$id ";
-    
+
 $result = mysqli_query($con, $sql);
 
 if ($result) {
-    header("location:index.php");
-    exit(0);
+   echo "<h1>แก้ไขข้อมูลสำเร็จ</h1> <br>";
+   echo "<a href='index.php'>กลับสู่หน้าหลัก</a>";
 } else {
     echo "ไม่สามารถแก้ไขข้อมูลได้" . mysqli_error($con);
 }
