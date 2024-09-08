@@ -43,6 +43,7 @@
             <input class="form-control" type="date" name="stu_date" id=""value="<?php echo $row["stu_date"]  ?>"   required> <br>
 
             <input type="submit" name="" id="" value="แก้ไขข้อมูล" class="btn btn-success">
+            <a class="btn btn-info" href='index.php'>กลับสู่หน้าหลัก</a>
              
             
         </form>
