@@ -1,10 +1,17 @@
 <?php
     require("connect.php");
-    $edit_id = $_GET["edit_id"];
+    $id = $_GET["id"];
 
-    $sql = "SELECT * FROM data_student WHERE edit_id=$edit_id ";
+    $sql = "SELECT * FROM data_student WHERE id=$id ";
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_assoc($result);
+    // if($result){
+    //     echo"1111";
+    // }else{
+    //    echo mysqli_error($con);
+    // }
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,23 +26,25 @@
         <h1 class="text-center">แก้ไขข้อมูล</h1>
         <hr>
         <form action="updatedata.php" method="POST">
-            <input type="hidden" value="<?php echo "$row[id]"; ?>" name="edit_id" id=""> //ซ้อนข้อมูลเมื่อกด
-
+            <input type="hidden" name="id"  id="" value="<?php echo $row["id"]; ?>">
             <label for="stu_id">รหัสนักเรียน :</label>
-            <input class="form-control" type="number" name="stu_id" id="" required>
+            <input class="form-control" type="number" name="stu_id" id="stu_id" value="<?php echo $row["stu_id"]  ?>" required>
 
             <label for="stu_id">ชื่อ-นามสกุล:</label>
-            <input class="form-control" type="text" name="stu_name" id=""  required>
+            <input class="form-control" type="text" name="stu_name" id=""value="<?php echo $row["stu_name"]  ?>"  required>
 
             <label for="stu_id">อีเมลล์:</label>
-            <input class="form-control" type="email" name="stu_email" id=""  required>
+            <input class="form-control" type="email" name="stu_email" id=""value="<?php echo $row["stu_email"]  ?>"  required>
 
             <label for="stu_id">หมายเลขโทรศัพท์ :</label>
-            <input class="form-control" type="number" name="stu_tel" id=""  required>
+            <input class="form-control" type="number" name="stu_tel" id="" value="<?php echo $row["stu_tel"]  ?>" required>
 
             <label for="stu_id">วันที่ลงทะเบียน :</label>
-            <input class="form-control" type="date" name="stu_date" id=""  required> <br>
-            <input type="submit" name="" id="" class="btn btn-success" value="บันทึก">
+            <input class="form-control" type="date" name="stu_date" id=""value="<?php echo $row["stu_date"]  ?>"   required> <br>
+
+            <input type="submit" name="" id="" value="แก้ไขข้อมูล" class="btn btn-success">
+             
+            
         </form>
     </div>
 </body>

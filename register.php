@@ -26,6 +26,7 @@
             <label for="stu_id">วันที่ลงทะเบียน :</label>
             <input class="form-control" type="date" name="stu_date" id=""  required> <br>
             <input type="submit" name="" id="" class="btn btn-success" value="บันทึก">
+            
         </form>
     </div>
 </body>

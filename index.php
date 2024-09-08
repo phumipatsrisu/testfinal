@@ -41,12 +41,13 @@
                         <td><?php echo "$row[stu_email]"?></td>
                         <td><?php echo "$row[stu_tel]" ?></td>
                         <td><?php echo "$row[stu_date]" ?></td>
-                        <td><a class="btn btn-primary" href="fixform.php">แก้ไข</a></td>
-                        <td><a class="btn btn-danger" href="">ลบ</a></td>
+                        <td><a class="btn btn-primary" href="editdataform.php?id=<?php echo"$row[id]" ?>">แก้ไข</a></td>
+                        <td><a class="btn btn-danger" href="deleteform.php?id=<?php echo "$row[id]" ?>">ลบ</a></td>
                     </tr>
                     <?php } ?>
             </tbody>         
         </table>
+        <a class="btn btn-warning" href="register.php">เพิ่มข้อมูล</a>
     </div>
 </body>
 
