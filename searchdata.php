@@ -1,7 +1,12 @@
 <?php
     require("connect.php");
-    $sql = "SELECT *  FROM data_student";
+    $stu_search = $_POST['stu_search'];
+
+    $sql = "SELECT *  FROM data_student where stu_name LIKE '%$stu_search%' OR stu_id LIKE '%$stu_search%' ORDER BY stu_id ASC";
     $result = mysqli_query($con,$sql);
+
+    $count = mysqli_num_rows($result);
+    $order = 1;
 
 ?>
 <!DOCTYPE html>
@@ -28,6 +33,7 @@
             </div>
         </form>
         <hr>
+        <?php  if($count > 0) {?>
         <table class="table">
             <thead class="table-dark">  
                 <tr>
@@ -44,7 +50,7 @@
             <tbody>
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
-                        
+                        <td><?php echo $order++; ?></td>
                         <td><?php echo "$row[id]"?></td>
                         <td><?php echo "$row[stu_id]"?></td>
                         <td><?php echo "$row[stu_name]" ?></td>
@@ -57,6 +63,11 @@
                     <?php } ?>
             </tbody>         
         </table>
+        <?php }else{ ?>
+            <div class="alert alert-danger">
+                <b>ไม่พบข้อมูลที่ค้นหา</b>
+            </div>
+            <?php  } ?>
         <a class="btn btn-warning" href="register.php">เพิ่มข้อมูล</a>
     </div>
 </body>
